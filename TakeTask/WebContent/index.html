@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TakeTask</title>
+<!-- Lib files -- Starts -->
+<script src="lib/angular.min.js"></script>
+<!-- Lib files -- Ends -->
+
+<!-- App files -- Starts -->
+<script src="scripts/TakeTask.App.js"></script>
+<!-- App files -- Ends -->
+
+
+</head>
+<body ng-app="TakeTask">
+<div ng-controller="ListTaskInProgress">
+<ul>
+    <li ng-repeat="task in taskList | filter:filterFunction">
+      <span>{{task.title}}</span>
+      <p>{{task.category}}</p>
+      <p>{{task.status}}</p>
+    </li>
+  </ul>
+</div>
+</body>
+</html>
