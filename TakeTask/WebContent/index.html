@@ -9,19 +9,21 @@
 
 <!-- App files -- Starts -->
 <script src="scripts/TakeTask.App.js"></script>
+<script src="scripts/TakeTask.CONSTANTS.js"></script>
 <!-- App files -- Ends -->
 
 
 </head>
 <body ng-app="TakeTask">
-<div ng-controller="ListTaskInProgress">
-<ul>
-    <li ng-repeat="task in taskList | filter:filterFunction">
-      <span>{{task.title}}</span>
-      <p>{{task.category}}</p>
-      <p>{{task.status}}</p>
-    </li>
-  </ul>
-</div>
+	<div ng-controller="ListTaskInProgress">
+		<div>
+			<input type="text" ng-model="search.$" />
+		</div>
+		<ul>
+			<li ng-repeat="task in taskList | filter:search"><span>{{task.title}}</span>
+				<p>{{task.category}}</p>
+				<p>{{task.status}}</p></li>
+		</ul>
+	</div>
 </body>
 </html>
